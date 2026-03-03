@@ -18,7 +18,7 @@ app.get('/', async (req, res) => {
     const result = await client.query('SELECT name FROM test WHERE id = 1');
     const userName = result.rows[0].name;
     
-    res.send(`<h1>Hello ${userName}</h1>`);
+    res.send(`<h1>안녕 ${userName}</h1>`);
   } catch (err) {
     console.error(err);
     res.status(500).send("DB 연결 오류 발생");
