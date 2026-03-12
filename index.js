@@ -15,7 +15,7 @@ client.connect();
 app.get('/', async (req, res) => {
   try {
     // DB에서 name이 '홍길동'인 레코드를 찾아옵니다.
-    const result = await client.query('SELECT name FROM test WHERE id = 1');
+    const result = await client.query('SELECT name FROM test LIMIT 1');
     const userName = result.rows[0].name;
     
     res.send(`<h1>안녕 ${userName}</h1>`);
